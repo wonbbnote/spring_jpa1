@@ -2,18 +2,22 @@ package jpabook.jpashop.repository;
 
 import jakarta.persistence.*;
 import jpabook.jpashop.domain.Member;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
+@RequiredArgsConstructor
 public class MemberRepository {
 
-    @PersistenceContext
-    private EntityManager em;
+//    @PersistenceContext
+//    private EntityManager em;
+//
+//    @PersistenceUnit
+//    private EntityManagerFactory emf;
 
-    @PersistenceUnit
-    private EntityManagerFactory emf;
+    private final EntityManager em;
 
     public void save(Member member){
         em.persist(member);
