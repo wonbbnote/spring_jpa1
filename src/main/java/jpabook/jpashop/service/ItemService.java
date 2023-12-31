@@ -1,6 +1,7 @@
 package jpabook.jpashop.service;
 
 import jpabook.jpashop.domain.*;
+import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ public class ItemService {
     private final ItemRepository itemRepository;
 
     @Transactional
-    public void saveId(Item item){
+    public void saveItem(Item item){
         itemRepository.save(item);
     }
 
@@ -31,6 +32,6 @@ public class ItemService {
     }
 
 
-
-
+    public void saveItem(Book book) {
+    }
 }
